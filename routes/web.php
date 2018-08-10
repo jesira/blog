@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/registration','UserController@index');
+Route::post('/','HomeController@home');
+Route::get('/','HomeController@home');
+
+Route::resource('posts','PostsController');
+
+
+
+
+
+
