@@ -64,6 +64,15 @@
         <hr>
         <a href="/posts/{{$post->PostId}}/edit" class="btn btn-default">Edit</a>
 
+<form action="{{route('posts.destroy',['id'=>$post->PostId])}}" method="post" class=" float-right">
+    {{ csrf_field() }}
+    <input type="hidden" name="_method" value="Delete">
+
+    <input type="submit" value="Delete" class="btn btn-danger ">
+
+
+</form>
+
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'article-ckeditor' );

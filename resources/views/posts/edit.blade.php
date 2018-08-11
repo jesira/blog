@@ -61,9 +61,9 @@
 
 @include('inc.messages')
 <h3>Edit Post</h3>
-<form action="{{route('posts.update','')}}" method="post">
+<form action="{{route('posts.update',['id'=>$post->PostId])}}" method="post">
     {{ csrf_field() }}
-    <input type="hidden" name="_METHOD" value="PUT"/>
+    <input type="hidden" name="_method" value="PUT">
 
     <input type="hidden" name="postId" value="{{$post->PostId}}">
 
